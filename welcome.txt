@@ -1,0 +1,21 @@
+███╗   ███╗██╗   ██╗    ██╗███╗   ███╗ █████╗  ██████╗ ███████╗
+████╗ ████║╚██╗ ██╔╝    ██║████╗ ████║██╔══██╗██╔════╝ ██╔════╝
+██╔████╔██║ ╚████╔╝     ██║██╔████╔██║███████║██║  ███╗█████╗  
+██║╚██╔╝██║  ╚██╔╝      ██║██║╚██╔╝██║██╔══██║██║   ██║██╔══╝  
+██║ ╚═╝ ██║   ██║       ██║██║ ╚═╝ ██║██║  ██║╚██████╔╝███████╗
+╚═╝     ╚═╝   ╚═╝       ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+-----------------------------------------------------------------------------------------------------------
+Bienvenue dans MyImage !
+
+Cette application vous permet de créer, modifier et sauvegarder des images de manière simple et intuitive.
+
+Vous pouvez créer une nouvelle image blanche, noire, colorée, ou une fractale avec les options de création d'image.
+Pour modifier une image existante, choisissez parmi les options suivantes : 
+- Passage en noir et blanc, échelle de gris
+- Rotation, agrandissement/réduction
+- Détection de contours, renforcement des bords, flou, repoussage
+Une fois que vous avez apporté les modifications souhaitées à votre image, 
+vous pouvez la sauvegarder en utilisant l'option de sauvegarde.
+
+Au fur et à mesure que vous utilisez MyImage, vous découvrirez également d'autres fonctionnalités.
+-----------------------------------------------------------------------------------------------------------

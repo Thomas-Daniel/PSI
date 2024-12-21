@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PSI</name>
+    </assembly>
+    <members>
+        <member name="M:PSI.Huffman.#ctor(PSI.MyImage)">
+            <summary>
+            Constructeur de Huffman
+            Le principe du constructeur est d'alimenter le dictionnaire des fréquences avec chaque pixel de l'image avec sa frequence d'apparition
+            </summary>
+            <param name="image"></param>
+        </member>
+        <member name="M:PSI.Huffman.ConstruireArbreHuffman">
+            <summary>
+            La fonction va construire l'arbre en fonction des noeuds et des fréquences jusqu'a qu'il reste qu'un seul noeud (la racine)
+            </summary>
+        </member>
+        <member name="M:PSI.Huffman.GenererTableCodage">
+            <summary>
+            Fonction qui genere toute la table de codage pour pouvoir encoder chaque chemin 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.Huffman.Encoder(PSI.MyImage)">
+            <summary>
+            Fonction qui encode chaque chemin de l'arbre 
+            </summary>
+            <param name="image"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.Huffman.Decoder(System.String,System.Int32,System.Int32)">
+            <summary>
+            la fonction inverse de l'encoder
+            </summary>
+            <param name="code"></param>
+            <param name="largeur"></param>
+            <param name="hauteur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.MyImage.#ctor(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Constructeur pour créer une instance de MyImage à partir d'un fichier .bmp ou à partir d'une image IPFS
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:PSI.MyImage.ReadImageFromStream(System.IO.FileStream)">
+            <summary>
+            
+            </summary>
+            <param name="fileStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.MyImage.ReadHeader(System.IO.FileStream)">
+            <summary>
+            Permet de lire l'en-tête de l'image
+            </summary>
+            <param name="fileStream"></param>
+        </member>
+        <member name="M:PSI.MyImage.ReadImage(System.IO.FileStream,System.Int32)">
+            <summary>
+            Permet de lire l'image sous la forme d'un tableau de pixels
+            </summary>
+            <param name="fileStream"></param>
+            <param name="paddingBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.MyImage.ConvertEndianToInt(System.Byte[],System.Int32,System.Int32)">
+             <summary>
+             Convertir une séquence d'octets au format little endian en entier
+             </summary>
+             <param name="tab">prends en entrée le tableau de byte à convertir </param>
+             <param name="startIndex">le premiere position à convertir</param>
+             <param name="length">la longueur à convertir </param>
+             <returns></returns>
+            
+        </member>
+        <member name="M:PSI.MyImage.ConvertIntToEndian(System.Int32,System.Int32)">
+            <summary>
+            Convertir un entier en séquence d'octets au format little endian
+            </summary>
+            <param name="val">valeur à traduire</param>
+            <param name="length">longueur à traduire</param>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.MyImage.FromImageToFile(System.String)">
+            <summary>
+            Enregistrer l'image dans un fichier en binaire en respectant la structure du fichier BMP
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:PSI.MyImage.Whiten">
+            <summary>
+            Passage de l'image en blanc
+            </summary>
+        </member>
+        <member name="M:PSI.MyImage.Blacken">
+            <summary>
+            Passage de l'image en noir
+            </summary>
+        </member>
+        <member name="M:PSI.MyImage.RandomColor">
+            <summary>
+            Coloration aléatoire de la matrice de pixel
+            </summary>
+        </member>
+        <member name="M:PSI.MyImage.BlackAndWhite">
+            <summary>
+            Coloration en noir et blanc 
+            </summary>
+        </member>
+        <member name="M:PSI.MyImage.GrayScale">
+            <summary>
+            Coloration en échelle de gris 
+            </summary>
+        </member>
+        <member name="M:PSI.MyImage.Rotate(System.Double)">
+            <summary>
+            Rotation de l'image d'angle quelconque
+            </summary>
+            <param name="angle"> Angle de rotation en degrés </param>
+        </member>
+        <member name="M:PSI.MyImage.Resize(System.Double)">
+            <summary>
+            Redimensionnement (agrandissement ou réduction) de l'image d'un coefficient quelconque
+            </summary>
+            <param name="coeff"> Coefficient de redimensionnement </param>
+        </member>
+        <member name="T:PSI.MyImage.ConvolutionType">
+            <summary>
+            Enumeration des differents types de convolution 
+            </summary>
+        </member>
+        <member name="M:PSI.MyImage.Filter(PSI.MyImage.ConvolutionType)">
+            <summary>
+            Fonction filtre qui va appliquer une convolution sur la matrice de pixels
+            </summary>
+            <param name="convolutionType">type de convolution souhaitée en parametre</param>
+        </member>
+        <member name="M:PSI.MyImage.Sierpinski">
+            <summary>
+            Fonction fractale pour les triangles de Sierpinski
+            </summary>
+        </member>
+        <member name="M:PSI.MyImage.SierpinskiRecu(PSI.Pixel[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Appel récursif pour les triangles 
+            </summary>
+            <param name="image2"></param>
+            <param name="x1"></param>
+            <param name="y1"></param>
+            <param name="x2"></param>
+            <param name="y2"></param>
+            <param name="x3"></param>
+            <param name="y3"></param>
+            <param name="iterations"></param>
+        </member>
+        <member name="M:PSI.MyImage.Mandelbrot(System.Int32)">
+            <summary>
+            Fonction pour l'ensemble de mandelbrot ( ensemble des suites convergentes complexes)
+            </summary>
+            <param name="maxIterations"></param>
+        </member>
+        <member name="M:PSI.MyImage.Julia(System.Int32)">
+            <summary>
+            Fonction pour l'ensemble de Julia (meme principe que mandelbrot mais avec une suite de référence différente)
+            </summary>
+            <param name="maxIterations"></param>
+        </member>
+        <member name="M:PSI.MyImage.SteganoHideText(System.String)">
+            <summary>
+            Cacher un texte dans une image de manière aléatoire
+            </summary>
+            <param name="text"> Message à cacher </param>
+            <returns> Clé permettant de retrouver le message caché </returns>
+        </member>
+        <member name="M:PSI.MyImage.SteganoShowText(System.String)">
+            <summary>
+            Récupérer un texte caché dans une image à partir d'une clé
+            </summary>
+            <param name="key"> Clé permettant de récupérer le message </param>
+            <returns> Message caché </returns>
+        </member>
+        <member name="M:PSI.MyImage.SteganoHideImage(PSI.MyImage)">
+            <summary>
+            Cacher une image dans une autre image de manière aléatoire
+            </summary>
+            <param name="toHide"> Image à cacher </param>
+            <returns> Clé permettant de retrouver l'image cachée </returns>
+        </member>
+        <member name="M:PSI.MyImage.SteganoShowImage(System.String)">
+            <summary>
+            Récupérer une image cachée dans une autre image à partir d'une clé
+            </summary>
+            <param name="key"> Clé permettant de récupérer l'image cachée </param>
+            <returns> Image cachée </returns>
+        </member>
+        <member name="M:PSI.MyImage.UploadToIpfs">
+            <summary>
+            Envoyer une image sur IPFS
+            </summary>
+            <returns> URL de la gateway/site permettant de consulter l'image envoyée sur IPFS </returns>
+        </member>
+        <member name="M:PSI.MyImage.RetrieveFromIpfs(System.String)">
+            <summary>
+            Récupérer une image depuis IPFS à partir de son CID
+            </summary>
+            <param name="cid"> cid de l'image à récupérer </param>
+            <returns> Tableau de byte représentant l'image </returns>
+        </member>
+        <member name="M:PSI.Noeud.#ctor(PSI.Pixel,System.Int32)">
+            <summary>
+            constructeur du noeud prenant seulemnt un pixel et une frequence en entrée
+            </summary>
+            <param name="pixel"></param>
+            <param name="frequence"></param>
+        </member>
+        <member name="M:PSI.Noeud.EstFeuille">
+            <summary>
+            Fonction pour verifier sur le noeud est une feuille càd s'il n'a pas de noeud adjacent
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.Pixel.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Constructeur d'un Pixel
+            </summary>
+            <param name="red"> Composante rouge d'un pixel </param>
+            <param name="green"> Composante verte d'un pixel </param>
+            <param name="blue"> Composante bleue d'un pixel </param>
+        </member>
+        <member name="M:PSI.Pixel.Ecrire">
+            <summary>
+            Représentation textuelle des composantes d'un Pixel
+            </summary>
+            <returns> Texte décrivant le Pixel </returns>
+        </member>
+        <member name="M:PSI.PixelComparer.Equals(PSI.Pixel,PSI.Pixel)">
+            <summary>
+            classe qui compare deux instances de pixel pour crée le dictionnaire correctement (voir site Microsoft pour l'implementatino de la classe)
+            </summary>
+            <param name="p1"></param>
+            <param name="p2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.UI.#ctor">
+            <summary>
+            Tous les menus fonctionnent de la même manière.
+            Les commentaires ne seront explicités que pour le menu principal
+            </summary>
+        </member>
+        <member name="M:PSI.UI.MenuPrincipal">
+            <summary>
+            Menu principal avec message de bienvenue et différentes options de manipulation d'image
+            </summary>
+        </member>
+        <member name="M:PSI.UI.CreateImageMenu">
+            <summary>
+            Menu de création d'images
+            </summary>
+        </member>
+        <member name="M:PSI.UI.FractaleMenu">
+            <summary>
+            Menu des fractales
+            </summary>
+        </member>
+        <member name="M:PSI.UI.LoadImageMenu">
+            <summary>
+            Menu de chargement d'une image
+            </summary>
+        </member>
+        <member name="M:PSI.UI.OpenFileMenu">
+            <summary>
+            Menu d'ouverture d'image avec affichage des images dans le répertoire courant
+            </summary>
+            <returns> Nom du fichier à ouvrir choisi par l'utilisateur </returns>
+        </member>
+        <member name="M:PSI.UI.ModifyMenu">
+            <summary>
+            Menu de modification d'image
+            </summary>
+        </member>
+        <member name="M:PSI.UI.HuffmanMenu">
+            <summary>
+            Menu pour la compression/décompression Huffman
+            </summary>
+        </member>
+        <member name="M:PSI.UI.SteganoMenu">
+            <summary>
+            Menu pour la stéganographie
+            </summary>
+        </member>
+        <member name="M:PSI.UI.SaveImageMenu">
+            <summary>
+            Menu sauvegarde image
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PSI.UI.SecureIntInput">
+            <summary>
+            Saisie sécurisée d'entier
+            </summary>
+            <returns> Entier entré par l'utilisateur </returns>
+        </member>
+        <member name="M:PSI.UI.SecureDoubleInput">
+            <summary>
+            Saisie sécurisée double
+            </summary>
+            <returns> Double entré par l'utilisateur </returns>
+        </member>
+        <member name="M:PSI.UI.FileList">
+            <summary>
+            Lister les fichiers dans le répertoire courant
+            </summary>
+            <returns> Liste des noms des fichiers dans le répertoire courant </returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,8 @@
+PSI.sln
+PSI.csproj
+.vs
+obj
+bin
+*.bmp
+*.rar
+huffman_code.txt
